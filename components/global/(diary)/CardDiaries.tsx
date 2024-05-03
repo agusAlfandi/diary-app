@@ -18,7 +18,7 @@ const CardDiaries = async (): Promise<React.ReactElement> => {
     );
 
   return (
-    <div className="grid md:grid-cols-3 gap-4">
+    <div className="grid md:grid-cols-3 gap-4 mb-4">
       {data.map((diary) => {
         return (
           <PostContent
