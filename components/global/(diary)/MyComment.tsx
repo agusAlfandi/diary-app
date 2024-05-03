@@ -2,7 +2,6 @@ import React from "react";
 import { userData } from "@/utils/clerk";
 import { IComments, supabase } from "@/utils/supabase";
 import Image from "next/image";
-import CommentsList from "./CommentsList";
 
 const MyComment = async (): Promise<React.ReactElement> => {
   const { email } = await userData();
@@ -20,7 +19,6 @@ const MyComment = async (): Promise<React.ReactElement> => {
     ?.map((a) => a)
     .flat()
     .filter((b) => b.email === email);
-  console.log("🚀 ~ MyComment ~ result:", result);
 
   return (
     <div className="container flex flex-col gap-4">
