@@ -33,18 +33,20 @@ const CommentsList = async ({
             className="ml-4 card card-body card-bordered p-4 bg-base-300 flex flex-row justify-between"
             key={comment.comment_id}
           >
-            <div>
-              <Image
-                src={comment.avatar as string}
-                alt={comment.avatar as string}
-                width={50}
-                height={50}
-                className="rounded-full bg-primary p-1 mb-3"
-              />
-              <p>{comment.content}</p>
-              <p>
-                {comment.username} || {comment.email}
-              </p>
+            <div className="p-3">
+              <div className="flex items-center">
+                <Image
+                  src={comment.avatar as string}
+                  alt={comment.avatar as string}
+                  width={50}
+                  height={50}
+                  className="rounded-full bg-primary p-1"
+                />
+                <p className="ml-4">
+                  {comment.username} || {comment.email}
+                </p>
+              </div>
+              <p className="mt-3">{comment.content}</p>
             </div>
             {comment.email === email ? (
               <div className="flex items-center">
