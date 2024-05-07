@@ -1,9 +1,10 @@
 import Wrapper from "@/components/global/Wrapper";
 import { supabase } from "@/utils/supabase";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import CreateCommentForm from "@/components/auth/CreateCommentForm";
 import CommentsList from "@/components/global/(diary)/CommentsList";
+import GetPastTime from "@/components/global/GetPastTime";
 
 type ParamsProps = {
   params: {
@@ -11,7 +12,7 @@ type ParamsProps = {
   };
 };
 
-const page = async ({ params }: ParamsProps) => {
+const page = async ({ params }: ParamsProps): Promise<React.ReactElement> => {
   const { data, error } = await supabase
     .from("diary")
     .select()
@@ -20,7 +21,7 @@ const page = async ({ params }: ParamsProps) => {
 
   if (error) return <p>Please reload the page...</p>;
 
-  const posted_at = new Date(data.created_at).toLocaleDateString();
+  // const posted_at = new Date(data.created_at).toLocaleDateString();
 
   return (
     <Wrapper>
@@ -34,7 +35,9 @@ const page = async ({ params }: ParamsProps) => {
             className="rounded-full"
           />
 
-          <i className="text-center">posted at {posted_at}</i>
+          <i className="text-center">
+            posted at <GetPastTime past_time={data.created_at} />
+          </i>
         </div>
         <h3 className="italic text-xl font-bold">
           ~{data.username || data.email}
