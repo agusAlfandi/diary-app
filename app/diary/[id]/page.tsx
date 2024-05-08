@@ -21,8 +21,6 @@ const page = async ({ params }: ParamsProps): Promise<React.ReactElement> => {
 
   if (error) return <p>Please reload the page...</p>;
 
-  // const posted_at = new Date(data.created_at).toLocaleDateString();
-
   return (
     <Wrapper>
       <div className="flex flex-col gap-4">
