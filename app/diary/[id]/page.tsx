@@ -1,7 +1,6 @@
 import Wrapper from "@/components/global/Wrapper";
 import { supabase } from "@/utils/supabase";
 import Image from "next/image";
-import React, { useState } from "react";
 import CreateCommentForm from "@/components/auth/CreateCommentForm";
 import CommentsList from "@/components/global/(diary)/CommentsList";
 import GetPastTime from "@/components/global/GetPastTime";
