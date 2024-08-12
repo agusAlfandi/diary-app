@@ -15,6 +15,7 @@ const PostContent = ({
   username,
 }: IDiary): React.ReactElement => {
   const pathName = usePathname();
+
   return (
     <div
       className="card card-body card-bordered shadow-lg bg-neutral-700
