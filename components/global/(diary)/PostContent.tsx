@@ -19,9 +19,9 @@ const PostContent = ({
   return (
     <div
       className="card card-body card-bordered shadow-lg bg-neutral-700
-    duration-300 ease-in-out cursor-pointer hover:scale-105 hover:shadow-xl hover:bg-base-300 h-56"
+    duration-300 ease-in-out cursor-pointer hover:scale-105 hover:shadow-xl hover:bg-base-300 h-64 flex sm:h-72 md:h-80 lg:h-60 w-auto"
     >
-      <div className="flex items-center gap-4">
+      <div className="flex flex-col lg:flex-row items-center gap-4">
         <Image
           className="rounded-full bg-primary p-2"
           src={avatar as string}
@@ -39,7 +39,7 @@ const PostContent = ({
           <ButtonDeleteDiary diary_id={diary_id} />
         ) : null}
         <Link href={`/diary/${diary_id}`}>
-          <button className="btn btn-primary">Comment</button>
+          <button className="btn btn-primary ml-3">Comment</button>
         </Link>
       </div>
     </div>
